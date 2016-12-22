@@ -42,14 +42,14 @@ class GenreSerializer(serializers.Serializer):
         Create and return a new `Genre` instance, given the validated data.
         """
         #self.slug = SlugifyUniquely(self.title,Genre)
-        validated_data['slug']= SlugifyUniquely(validated_data['title'],Genre)
+        validated_data['slug'] = SlugifyUniquely(validated_data['title'],Genre)
         return Genre.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         """
         Update and return an existing `Genre` instance, given the validated data.
         """
-        #instance.title = validated_data.get('title', instance.title)
+        instance.title = validated_data.get('title', instance.title)
         #instance.code = validated_data.get('code', instance.code)
         #instance.linenos = validated_data.get('linenos', instance.linenos)
         #instance.language = validated_data.get('language', instance.language)
