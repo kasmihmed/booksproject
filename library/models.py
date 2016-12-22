@@ -21,7 +21,7 @@ class Book(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
-        self.slug = SlugifyUniquely(self.name[:40], self.__class__)
+        self.slug = SlugifyUniquely(self.title[:40], self.__class__)
         super(Book, self).save(*args, **kwargs)
 
 
