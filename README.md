@@ -8,7 +8,7 @@
 ----------------------------------
 >./manage.py makemigrations
 
->./manage migrate
+>./manage.py migrate
 
 3 create super user
 -------------------
