@@ -2,12 +2,13 @@
 
 1 install required libraries
 -----------------------------
->pip install -r requirement.txt
+>pip install -r requirements.txt
 
 2 make migrations in case missing
 ----------------------------------
 >./manage.py makemigrations
->./manage migrate
+
+>./manage.py migrate
 
 3 create super user
 -------------------
@@ -18,7 +19,7 @@
 >./manage.py runserver
 
 login at:
-/admin/login/?next=/books/
+http://127.0.0.1:8000/admin/login/?next=/books/
 
 5 get all the books
 -------------------
@@ -38,7 +39,7 @@ request.body(json):
 {"title":"your title"}
 9 add a genre to a book
 -----------------------
-POST /books/$book_slug/genres/$genre_slug
+POST /books/$book_slug/genres/$genre_slug/
 10 update a book
 ----------------
 PUT /books/$book_slug/
