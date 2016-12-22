@@ -19,7 +19,7 @@
 >./manage.py runserver
 
 login at:
-/admin/login/?next=/books/
+http://127.0.0.1:8000/admin/login/?next=/books/
 
 5 get all the books
 -------------------
