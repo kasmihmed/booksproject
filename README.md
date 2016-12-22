@@ -7,6 +7,7 @@
 2 make migrations in case missing
 ----------------------------------
 >./manage.py makemigrations
+
 >./manage migrate
 
 3 create super user
