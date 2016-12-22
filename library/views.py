@@ -28,7 +28,7 @@ def book_list(request):
             serializer = BookSerializer(books, many=True)
             return JSONResponse(serializer.data)
         else:
-            return redirect('/login/?next=/books/')
+            return redirect('/admin/login/?next=/books/')
 
     elif request.method == 'POST':
         if request.user.is_authenticated:
@@ -45,7 +45,7 @@ def book_list(request):
                     return JSONResponse(serializer.data, status=201)
             return JSONResponse(serializer.errors, status=400)
         else:
-            return redirect('/login/?next=/books/')
+            return redirect('/admin/login/?next=/books/')
     else:
         return JSONResponse({'error':'method not supported'}, status=405)
 
@@ -61,7 +61,7 @@ def genre_list(request):
             serializer = GenreSerializer(genres, many=True)
             return JSONResponse(serializer.data)
         else:
-            return redirect('/login/?next=/genres/')
+            return redirect('/admin/login/?next=/genres/')
 
     elif request.method == 'POST':
         if request.user.is_authenticated:
@@ -72,7 +72,7 @@ def genre_list(request):
                 return JSONResponse(serializer.data, status=201)
             return JSONResponse(serializer.errors, status=400)
         else:
-            return redirect('/login/?next=/genres/')
+            return redirect('/admin/login/?next=/genres/')
     else:
         return JSONResponse({'error': 'method not supported'}, status=405)
 
@@ -104,7 +104,7 @@ def book_detail(request, slug):
                 return JSONResponse({'error':'you do not have  the right permissions to update this book'},
                                     status=400)
         else:
-            return redirect('/login/?next=/books/{}/'.format(slug))
+            return redirect('/admin/login/?next=/books/{}/'.format(slug))
 
     elif request.method == 'DELETE':
         book.delete()
@@ -138,6 +138,6 @@ def add_genre(request,book_slug,genre_slug):
                 return JSONResponse({'error': 'you do not have  the right permissions to update this book'},
                                     status=400)
         else:
-            return redirect('/login/?next=/books/{}/'.format(book_slug))
+            return redirect('/admin/login/?next=/books/{}/'.format(book_slug))
     else:
         return JSONResponse({'error': 'method not supported'}, status=405)
