@@ -3,16 +3,20 @@
 1 install required libraries
 -----------------------------
 >pip install -r requirement.txt
+
 2 make migrations in case missing
 ----------------------------------
 >./manage.py makemigrations
 >./manage migrate
+
 3 create super user
 -------------------
 >./manage.py createsuperuser
+
 4 start the server and login
 -----------------------------
 >./manage.py runserver
+
 login at:
 /admin/login/?next=/books/
 
