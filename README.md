@@ -39,7 +39,7 @@ request.body(json):
 {"title":"your title"}
 9 add a genre to a book
 -----------------------
-POST /books/$book_slug/genres/$genre_slug
+POST /books/$book_slug/genres/$genre_slug/
 10 update a book
 ----------------
 PUT /books/$book_slug/
