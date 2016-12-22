@@ -2,7 +2,7 @@
 
 1 install required libraries
 -----------------------------
->pip install -r requirement.txt
+>pip install -r requirements.txt
 
 2 make migrations in case missing
 ----------------------------------
